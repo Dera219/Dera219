@@ -11,10 +11,10 @@ rather than by discipline, then write the test that fails if anyone removes it.
 ---
 
 **[ToolBelt](https://github.com/Dera219/toolbelt)** — a two-sided gig marketplace, built and
-deployed end to end: an 8,400-line FastAPI/PostgreSQL API and a 4,400-line TypeScript Expo client
-shipping from one codebase to iOS, Android, and web, live at
-[toolbelt.biz](https://toolbelt.biz). It has no users; I built it to be correct, not to be
-operated. The interesting half is the money. Every money-moving Stripe call is journaled on a
+deployed end to end: a 7,800-line FastAPI/PostgreSQL API and a 4,300-line TypeScript Expo client
+shipping from one codebase to iOS, Android, and web. It ran on its own domain over TLS until I
+retired the hosting in September 2026, rather than keep renting a demo with no users. I built it
+to be correct, not to be operated. The interesting half is the money. Every money-moving Stripe call is journaled on a
 second connection *before* the call goes out, because Stripe prunes idempotency keys after 24
 hours and a retried refund past that window is not a retry — it's a second real charge. Three of
 the defects I fixed were invisible to a mocked test suite and only appeared against the live API,
